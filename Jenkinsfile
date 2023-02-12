@@ -8,14 +8,14 @@ pipeline {
         stage('Build') {
             steps {
                 dir("BACKEND-APPLICATION/"){
-                    bat 'mvn install -DskipTests'
+                    sh 'mvn install -DskipTests'
                 }
             }
         }
         stage('Deploy') {
             steps {
-                bat 'docker-compose build'
-                bat 'docker-compose up -d'
+                sh 'docker-compose build'
+                sh 'docker-compose up -d'
             }
         }
     }
