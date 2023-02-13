@@ -7,8 +7,10 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                dir("/SPRING-BOOT-APPLICATION/"){
-                    sh 'mvn clean install'
+                dir("SPRING-BOOT-APPLICATION/"){
+                    sh 'echo caling user is'
+                    sh 'echo $USER'
+
                 }
             }
         }
