@@ -10,7 +10,7 @@ pipeline {
                 dir("SPRING-BOOT-APPLICATION/"){
 
 
-                    sh 'sudo --non-interactive  mvn clean install'
+                    sh '/opt/apache-maven-3.9.0/bin/mvn clean install'
                 }
             }
         }
