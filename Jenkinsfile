@@ -16,11 +16,11 @@ pipeline {
             }
         }
         stage('Deploy') {
-             steps{
-              dir("SPRING-BOOT-APPLICATION/"){
+            steps{
+                dir("SPRING-BOOT-APPLICATION/"){
                     sh 'docker-compose up -d'
-                 }
-             }
+                }
+            }
         }
     }
 }
