@@ -11,15 +11,10 @@ pipeline {
         stage('Build') {
             steps {
                 dir("SPRING-BOOT-APPLICATION/"){
-                    sh 'mvn install -DskipTests'
+                    sh 'mvn --version'
                 }
             }
         }
-        stage('Deploy') {
-            steps {
-                sh 'docker-compose build'
-                sh 'docker-compose up -d'
-            }
-        }
+
     }
 }
