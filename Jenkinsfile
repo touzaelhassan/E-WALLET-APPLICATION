@@ -18,7 +18,7 @@ pipeline {
         stage('Deploy') {
              steps{
               dir("SPRING-BOOT-APPLICATION/"){
-                    sh 'docker-compose -v'
+                    sh 'docker-compose up -d'
                  }
              }
         }
