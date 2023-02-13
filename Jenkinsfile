@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                dir("SPRING-BOOT-APPLICATION/"){
+                dir("/SPRING-BOOT-APPLICATION/"){
                     sh 'mvn clean install'
                 }
             }
