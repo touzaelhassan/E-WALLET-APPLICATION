@@ -10,7 +10,7 @@ pipeline {
                 dir("SPRING-BOOT-APPLICATION/"){
 
 
-                    sh 'sudo mvn clean install'
+                    sh 'sudo --non-interactive  mvn clean install'
                 }
             }
         }
