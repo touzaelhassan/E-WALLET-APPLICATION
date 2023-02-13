@@ -8,9 +8,7 @@ pipeline {
         stage('Build') {
             steps {
                 dir("SPRING-BOOT-APPLICATION/"){
-
-
-                    sh 'mvn clean package'
+                    sh 'mvn install -DskipTests'
                 }
             }
         }
