@@ -8,9 +8,11 @@ pipeline {
         stage('Build') {
             steps {
                 dir("SPRING-BOOT-APPLICATION/"){
-                    sh 'echo caling user is'
-                    sh 'echo $USER'
 
+                    sh 'export M2_HOME=/opt/apache-maven-3.9.0 # your Mavan home path'
+                    sh 'export PATH=$PATH:$M2_HOME/bin'
+                    sh 'mvn --version'
+                    sh 'mvn clean install'
                 }
             }
         }
