@@ -17,6 +17,10 @@ pipeline {
         }
         stage('Deploy') {
             steps {
+                sh 'echo $USER'
+                sh 'groups $USER'
+                sh 'sudo usermod -aG docker $USER'
+                sh 'groups $USER'
                 sh 'docker-compose up'
             }
         }
