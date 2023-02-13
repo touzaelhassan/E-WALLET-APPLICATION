@@ -16,10 +16,12 @@ pipeline {
             }
         }
         stage('Deploy') {
+             steps{
               dir("SPRING-BOOT-APPLICATION/"){
-                   sh 'docker build -t testImage'
-                   sh 'docker run -d testImage'
-              }
+                    sh 'docker build -t testImage'
+                    sh 'docker run -d testImage'
+                 }
+             }
         }
     }
 }
