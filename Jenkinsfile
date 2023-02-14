@@ -13,13 +13,17 @@ pipeline {
                 dir("SPRING-BOOT-APPLICATION/"){
                     sh 'mvn install -DskipTests'
                 }
+                dir("WALLET-SERVICE/"){
+                    sh 'mvn install -DskipTests'
+                }
+                dir("OPERATION-SERVICE/"){
+                    sh 'mvn install -DskipTests'
+                }
             }
         }
         stage('Deploy') {
             steps{
-                dir("SPRING-BOOT-APPLICATION/"){
-                    sh 'docker-compose up -d'
-                }
+                sh 'docker-compose --version'
             }
         }
     }
