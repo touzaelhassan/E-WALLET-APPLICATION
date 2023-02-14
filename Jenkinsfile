@@ -2,10 +2,10 @@
 pipeline {
     agent any
     triggers {
-       pollSCM '* * * * *'
+        pollSCM '* * * * *'
     }
     tools{
-       maven 'maven'
+        maven 'maven'
     }
     stages {
         stage('Build') {
