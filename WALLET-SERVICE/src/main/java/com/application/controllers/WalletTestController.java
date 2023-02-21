@@ -5,6 +5,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class WalletTestController {
-    @GetMapping("/wallet-message")
-    public String getWalletMessage(){ return "Hello From Wallet !!."; }
+    @GetMapping("/wallet-service")
+    public String walletService(){ return "Wallet Service Works !!."; }
 }

@@ -2,32 +2,33 @@ version: "3.8"
 
 services:
 
-  database:
+  wallet-service-db:
     image: postgres
-    container_name: database-container
+    container_name: wallet-service-db-container
     ports:
-      - "5432:5432"
+      - "5433:5432"
     environment:
       POSTGRES_USER: touzaelhassan
       POSTGRES_PASSWORD: touzaelhassan
       POSTGRES_DB: spring_boot_application
 
-  backend:
-    build: ./SPRING-BOOT-APPLICATION
-    image: backend-image
-    container_name: backend-container
+  wallet-service-backend:
+    build: ./WALLET-SERVICE
+    image: wallet-service-backed-image
+    container_name: wallet-service-backend-container
     ports:
-      - "8081:8080"
+      - "8082:8080"
     depends_on:
-      - database
+      - wallet-service-db
 
-  pgadmin:
+  wallet-service-pgadmin:
     image: dpage/pgadmin4
-    container_name: pgadmin4_container
+    container_name: wallet-service-pgadmin4_container
     ports:
-      - "5050:80"
+      - "5051:80"
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@gmail.com
       PGADMIN_DEFAULT_PASSWORD: admin
     depends_on:
-      - database
+      - wallet-service-db
+

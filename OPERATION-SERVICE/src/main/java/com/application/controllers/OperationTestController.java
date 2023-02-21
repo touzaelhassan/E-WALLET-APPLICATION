@@ -9,9 +9,16 @@ import org.springframework.web.bind.annotation.RestController;
 public class OperationTestController {
 
     private final WalletProxy walletProxy;
+
     @Autowired
     public OperationTestController(WalletProxy walletProxy) { this.walletProxy = walletProxy; }
-    @GetMapping("/test-operation-service")
-    public String testOperationService(){ return walletProxy.getWalletMessage(); }
+
+    @GetMapping("/operation-service")
+    public String operationService(){ return "Operation Service Works !!."; }
+
+    @GetMapping("/test")
+    public String testFeign(){
+        return walletProxy.walletService();
+    }
 
 }
